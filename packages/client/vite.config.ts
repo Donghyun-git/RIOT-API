@@ -34,6 +34,18 @@ export default defineConfig({
         find: '@utils',
         replacement: resolve(__dirname, 'src', 'utils'),
       },
+      {
+        find: '@constants',
+        replacement: resolve(__dirname, 'src', 'constants'),
+      },
+      {
+        find: '@routes',
+        replacement: resolve(__dirname, 'src', 'routes'),
+      },
+      {
+        find: '@services',
+        replacement: resolve(__dirname, 'src', 'services'),
+      },
     ],
   },
   plugins: [react()],
