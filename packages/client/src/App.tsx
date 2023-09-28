@@ -1,13 +1,15 @@
-import React from 'react';
-import Router from './routes/Router';
+import Routes from './routes/Router.tsx';
 
-import './App.css';
+import React from 'react';
+import { Common } from '@components/Common';
 
 function App() {
   return (
     <div>
       <React.Suspense fallback>
-        <Router />
+        <Common>
+          <Routes />
+        </Common>
       </React.Suspense>
     </div>
   );
