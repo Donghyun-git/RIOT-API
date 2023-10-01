@@ -1,3 +1,4 @@
+const { SUCCESS } = require('../../constants/status');
 const { AppError } = require('../../middlewares/errorHandler');
 
 const authService = require('../../services/auth/authService');
@@ -7,11 +8,9 @@ const login = async (req, res, next) => {
 
   try {
     const { status, data } = await authService.login({ id, password });
-  }catch(error) {
 
-  }
-}
+    res.status(SUCCESS).json(data);
+  } catch (error) {}
+};
 
-const 
-
-module.exports = { login }
+module.exports = { login };

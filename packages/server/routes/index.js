@@ -6,8 +6,10 @@ const router = Router();
  * router import
  */
 
+const authRouter = require('./auth/authRouter');
 const searchRouter = require('./search/searchRouter');
 
+router.use('/auth', authRouter);
 router.use('/search', searchRouter);
 
 module.exports = router;
