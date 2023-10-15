@@ -17,7 +17,8 @@
       "@routes/*": ["routes/*"],
       "@services/*": ["services/*"],
       "@utils/*": ["utils/*"],
-      "@store/*": ["store/*"]
+      "@store/*": ["store/*"],
+      "@layout/*": ["layout/*"]
     },
 
     /* Bundler mode */

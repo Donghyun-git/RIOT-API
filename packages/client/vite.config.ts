@@ -46,6 +46,10 @@ export default defineConfig({
         find: '@services',
         replacement: resolve(__dirname, 'src', 'services'),
       },
+      {
+        find: '@layout',
+        replacement: resolve(__dirname, 'src', 'layout'),
+      },
     ],
   },
   plugins: [react()],
