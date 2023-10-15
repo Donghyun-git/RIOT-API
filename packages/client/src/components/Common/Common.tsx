@@ -1,18 +1,22 @@
-import { Children, cloneElement, ReactNode, ReactElement } from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import { Children, cloneElement, ReactElement } from 'react';
+import { useLocation } from 'react-router-dom';
 
-type CommonProps = {
-  children: ReactNode;
-};
+import { Header } from './Header';
+import { Footer } from './Footer';
 
-const Common = ({ children }: CommonProps) => {
-  return (
-    <div>
+import { ChildProps } from '../../layout/PageLayout';
+
+const Common = ({ children }: ChildProps) => {
+  const { pathname } = useLocation();
+
+  return pathname !== '/login' ? (
+    <>
       <Header />
       {Children.map(children, (child) => cloneElement(child as ReactElement, {}))}
       <Footer />
-    </div>
+    </>
+  ) : (
+    Children.map(children, (child) => cloneElement(child as ReactElement, {}))
   );
 };
 
