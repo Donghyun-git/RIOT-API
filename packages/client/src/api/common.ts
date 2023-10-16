@@ -32,7 +32,7 @@ export const customAuthFetch = axios.create({
 // });
 
 // customAuthFetch.interceptors.response.use((res) => {
-//   if (!isExitApplication && res.data?.result.status.startsWith('8')) {
+//   if (!isExitApplication && res.data?.result.status === 401) {
 //     alert(
 //       '이용시간이 만료되었거나 다른 기기에서 로그인되어 자동로그아웃 되었습니다. 서비스를 계속 이용하시려면 다시 로그인 하시기 바랍니다!',
 //     );
