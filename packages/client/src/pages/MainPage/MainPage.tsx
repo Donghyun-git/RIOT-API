@@ -29,8 +29,18 @@ const MainPage = () => {
       const res = await summonerGetFetch(getValues('search'));
 
       setSearchInfo(res.data);
-    } catch (error) {
-      console.error(error);
+    } catch (e: any) {
+      const {
+        response: {
+          data: { status },
+        },
+      } = e;
+      console.error(e);
+
+      if (status === 404) {
+        alert('등록되지 않은 소환사에요!');
+        return;
+      }
     }
   });
 
@@ -46,7 +56,11 @@ const MainPage = () => {
                 type="text"
                 placeholder="소환사 이름을 입력해주세요."
                 {...register('search', {
-                  required: '2글자 이상 입력해주세요!',
+                  required: '소환사 이름을 입력해주세요!',
+                  minLength: {
+                    value: 3,
+                    message: '3글자 이상 입력해주세요!',
+                  },
                 })}
               />
               <button type="submit" className="search-submit">

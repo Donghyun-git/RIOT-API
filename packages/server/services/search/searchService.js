@@ -18,7 +18,8 @@ const getSummoner = async (summoner) => {
 
     return res;
   } catch (error) {
-    if (error.response.status === 403) {
+    console.error(error);
+    if (error.response.status !== 500) {
       throw new AppError(error.response.status, error.response.statusText);
     } else {
       throw new AppError(SERVER_ERROR, INTERNAL_SERVER_ERROR);

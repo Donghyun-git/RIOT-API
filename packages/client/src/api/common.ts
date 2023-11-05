@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { redirectDocument } from 'react-router-dom';
 
-// import { useUserStore } from '../store/useUserStore';
+import { useUserStore } from '../store/useUserStore';
 import { PATH } from '../constants/paths';
 
 export const baseURL = import.meta.env.VITE_APP_BASE_URL;

@@ -1,16 +1,8 @@
+import { SummonerGetFetchResponseProps } from '@api/search/summonerGetFetch';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-export interface SearchStore {
-  id: string;
-  accountId: string;
-  puuid: string;
-  name: string;
-  profileIconId: number;
-  revisionDate: Date | number;
-  summonerLevel: number;
-}
-
+export type SearchStore = SummonerGetFetchResponseProps;
 export interface SearchStoreActions {
   setSearchInfo: (state: SearchStore) => void; //state 타입정의
 }
